@@ -43,7 +43,7 @@ class Im3xLoader {
       } catch(e){}
     }
     // 加载代码，存储
-    let req = new Request(`https://${this.git}.com/im3x/Scriptables/raw/main/${encodeURIComponent(this.opt['name'])}/${encodeURIComponent(this.opt['version'])}.js?_=${+new Date}`)
+    let req = new Request(`https://${this.git}.com/keventseng/Scriptables/raw/main/${encodeURIComponent(this.opt['name'])}/${encodeURIComponent(this.opt['version'])}.js?_=${+new Date}`)
     let res = await req.loadString()
     // 如果404
     if (req.response['statusCode'] === 404) {
@@ -66,7 +66,7 @@ class Im3xLoader {
     let t = m.addText("404")
     t.textColor = Color.red()
     t.centerAlignText()
-    m.url = 'https://github.com/im3x/Scriptables'
+    m.url = 'https://github.com/keventseng/Scriptables'
     return m
   }
   async render () {
@@ -77,7 +77,7 @@ class Im3xLoader {
   }
   
   async notify () {
-    let req = new Request(`https://${this.git}.com/im3x/Scriptables/raw/main/update.notify.json?_=${+new Date}`)
+    let req = new Request(`https://${this.git}.com/keventseng/Scriptables/raw/main/update.notify.json?_=${+new Date}`)
     let res = await req.loadJSON()
     if (!res || !res['id']) return
     // 判断是否已经通知过
